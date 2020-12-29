@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Analyzing...
+{% endblock title %}
+
+{% block body %}
+
+<h1 style='text-align:center; margin-top:3rem'>Here is your Analyzed Text...</h1>
+<h4 style='text-align:center; margin-top:2rem'>{{ beforelength}}<br><br>{{ afterlength}}</h4>
+
+    
+
+    <p >
+
+    <pre style = 'text-align:center;margin-top: 66px;color: forestgreen;'>{{ analyzed_text}}</pre>
+
+    </p>
+
+
+
+{% endblock body %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home | Text Analyzer
+{% endblock title %}
+
+{% block body %}
+    <h1 class = 'container mt-4' style = 'text-align:center'>Welcome to the text analyzer. Enter your text below</h1>
+    
+    <form action='/analyzed' method='POST'>
+    {% csrf_token %}
+    <div class="form-floating">
+        <textarea name = 'text'  class="form-control mt-5" style = 'height:200px; max-width: 85%; margin-left: 8%;' id="text"></textarea>
+        <label for="text" style = 'margin-left:8%'>Enter The Text Here!</label>
+    </div>
+
+
+    <div class="form-check form-switch mt-4">
+        <input style = 'margin-left:8%' class="form-check-input" name = 'removepunc' type="checkbox" id="flexSwitchCheckChecked">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Remove Punctuations</label>
+    </div>
+
+
+
+    <div class="form-check form-switch mt-2">
+        <input style = 'margin-left:8%' class="form-check-input" name = 'remextraspc' type="checkbox" id="flexSwitchCheckChecked1">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Remove Extra Spaces</label>
+    </div>
+
+
+
+    <div class="form-check form-switch mt-2">
+        <input style = 'margin-left:8%' class="form-check-input" name = 'remnewlines' type="checkbox" id="flexSwitchCheckChecked2">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Remove New Lines</label>
+    </div>
+
+
+
+    <div class="form-check form-switch mt-2">
+        <input style = 'margin-left:8%' class="form-check-input" name = 'capfirst' type="checkbox" id="flexSwitchCheckChecked3">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Capitalize First Letter of each Word.</label>
+    </div>
+
+
+
+    <div class="form-check form-switch mt-2">
+        <input style = 'margin-left:8%' class="form-check-input" name = 'fullcaps' type="checkbox" id="flexSwitchCheckChecked3">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Capitalize the whole Text.</label>
+    </div>
+
+
+
+    <div class="form-check form-switch mt-2">
+        <input style = 'margin-left:8%' class="form-check-input" name = 'counter' type="checkbox" id="flexSwitchCheckChecked4">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Count Number of Characters</label>
+    </div>
+
+
+    <button style = 'margin-left:8%' type="submit" class="btn btn-success mt-3">Analyze</button>
+
+    </form>
+{% endblock body %}
